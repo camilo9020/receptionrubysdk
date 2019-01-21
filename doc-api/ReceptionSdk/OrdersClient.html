@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: ReceptionSdk::OrdersClient
+  
+    &mdash; Documentation by YARD 0.9.15
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "ReceptionSdk::OrdersClient";
+  relpath = '../';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="../class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="../_index.html">Index (O)</a> &raquo;
+    <span class='title'><span class='object_link'><a href="../ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span>
+     &raquo; 
+    <span class="title">OrdersClient</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="../class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: ReceptionSdk::OrdersClient
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ReceptionSdk::OrdersClient</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/reception_sdk/clients/orders_client.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>The OrdersClient class contains all the logic to obtain the orders from
+PedidosYa API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Author:</p>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>Mathías Fernández</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Version:</p>
+<ul class="version">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'>
+<p>1.0</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="WAIT_TIME_SECONDS-constant" class="">WAIT_TIME_SECONDS =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>20</span></pre></dd>
+      
+        <dt id="POLL_TIME_SECONDS-constant" class="">POLL_TIME_SECONDS =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>10s</span><span class='tstring_end'>&#39;</span></span></pre></dd>
+      
+        <dt id="MAX_RETRIES-constant" class="">MAX_RETRIES =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>5</span></pre></dd>
+      
+        <dt id="MAX_NUMBER_OF_MESSAGES-constant" class="">MAX_NUMBER_OF_MESSAGES =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>10</span></pre></dd>
+      
+        <dt id="CONFIRM-constant" class="">CONFIRM =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+      
+        <dt id="REJECT-constant" class="">REJECT =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>3</span></pre></dd>
+      
+        <dt id="INVOICE-constant" class="">INVOICE =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>1</span></pre></dd>
+      
+        <dt id="REFUND-constant" class="">REFUND =
+          
+        </dt>
+        <dd><pre class="code"><span class='int'>2</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delivery_time-instance_method" title="#delivery_time (instance method)">#<strong>delivery_time</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute delivery_time.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject_message-instance_method" title="#reject_message (instance method)">#<strong>reject_message</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns the value of attribute reject_message.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#confirm-instance_method" title="#confirm (instance method)">#<strong>confirm</strong>(order, delivery_time = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Confirms a pending order.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dispatch-instance_method" title="#dispatch (instance method)">#<strong>dispatch</strong>(order)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Dispatch an order.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">#<strong>get</strong>(id)  &#x21d2; Order </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Returns an operational order by it&#39;s id.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_all-instance_method" title="#get_all (instance method)">#<strong>get_all</strong>(state, pagination_options, on_success = nil, on_error = nil)  &#x21d2; Array&lt;Order&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Listen for new orders.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_tracking-instance_method" title="#get_tracking (instance method)">#<strong>get_tracking</strong>(order_id)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieves the OrderTracking given an orderId.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(connection)  &#x21d2; OrdersClient </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>OrdersClient class constructor with params.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#load_orders-instance_method" title="#load_orders (instance method)">#<strong>load_orders</strong>(state, pagination_options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#max_timestamp-instance_method" title="#max_timestamp (instance method)">#<strong>max_timestamp</strong>(orders)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#poll_orders-instance_method" title="#poll_orders (instance method)">#<strong>poll_orders</strong>(on_success, on_error, pagination_options)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pushed_orders-instance_method" title="#pushed_orders (instance method)">#<strong>pushed_orders</strong>(on_success)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#reject-instance_method" title="#reject (instance method)">#<strong>reject</strong>(order, reject_message, rejection_note = nil)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Reject rejecting order.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#update-instance_method" title="#update (instance method)">#<strong>update</strong>(order_id, state, delivery_time_id, reject_message_id, dispatched, rejection_note)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(connection)  &#x21d2; <tt><span class='object_link'><a href="" title="ReceptionSdk::OrdersClient (class)">OrdersClient</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>OrdersClient class constructor with params</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>connection</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the API connection</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if some error has occurred with params</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+39
+40
+41
+42
+43
+44</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 39</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Ensure.html" title="ReceptionSdk::Ensure (class)">Ensure</a></span></span><span class='period'>.</span><span class='id identifier rubyid_argument_not_null'><span class='object_link'><a href="Ensure.html#argument_not_null-class_method" title="ReceptionSdk::Ensure.argument_not_null (method)">argument_not_null</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_connection'>connection</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>connection</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='ivar'>@connection</span> <span class='op'>=</span> <span class='id identifier rubyid_connection'>connection</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_delivery_time'>delivery_time</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="DeliveryTimesClient.html" title="ReceptionSdk::DeliveryTimesClient (class)">DeliveryTimesClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="DeliveryTimesClient.html#initialize-instance_method" title="ReceptionSdk::DeliveryTimesClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@connection</span><span class='rparen'>)</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_reject_message'>reject_message</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="RejectMessagesClient.html" title="ReceptionSdk::RejectMessagesClient (class)">RejectMessagesClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="RejectMessagesClient.html#initialize-instance_method" title="ReceptionSdk::RejectMessagesClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='ivar'>@connection</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="delivery_time=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="delivery_time-instance_method">
+  
+    #<strong>delivery_time</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute delivery_time</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span>
+  <span class='ivar'>@delivery_time</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="reject_message=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="reject_message-instance_method">
+  
+    #<strong>reject_message</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns the value of attribute reject_message</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reject_message'>reject_message</span>
+  <span class='ivar'>@reject_message</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="confirm-instance_method">
+  
+    #<strong>confirm</strong>(order, delivery_time = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Confirms a pending order</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order to to be confirmed, can be the order.id</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>delivery_time</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the delivery time id selected</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if the order was confirmed</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if some error has occurred with params</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 111</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_confirm'>confirm</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='comma'>,</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_order'>order</span><span class='op'>:</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span> <span class='op'>=</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span> <span class='op'>:</span> <span class='id identifier rubyid_delivery_time'>delivery_time</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+
+    <span class='kw'>return</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#CONFIRM-constant" title="ReceptionSdk::OrdersClient::CONFIRM (constant)">CONFIRM</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='kw'>return</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#CONFIRM-constant" title="ReceptionSdk::OrdersClient::CONFIRM (constant)">CONFIRM</a></span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="dispatch-instance_method">
+  
+    #<strong>dispatch</strong>(order)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Dispatch an order. This method must be called when the restaurant is ready
+to deliver the order</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order to be dispatched</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if the order was dispatched</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+148
+149
+150
+151
+152</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 148</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_order'>order</span> <span class='op'>:</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get-instance_method">
+  
+    #<strong>get</strong>(id)  &#x21d2; <tt><span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns an operational order by it&#39;s id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order identification number</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order with the specified id</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Request.html" title="ReceptionSdk::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Request.html#initialize-instance_method" title="ReceptionSdk::Request#initialize (method)">new</a></span></span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>orders/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="HttpStatus.html" title="ReceptionSdk::HttpStatus (class)">HttpStatus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="HttpStatus.html#OK-constant" title="ReceptionSdk::HttpStatus::OK (constant)">OK</a></span></span>
+      <span class='id identifier rubyid_body_json'>body_json</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="JsonUtil.html" title="ReceptionSdk::JsonUtil (class)">JsonUtil</a></span></span><span class='period'>.</span><span class='id identifier rubyid_adapt_response_for_json_parsing'><span class='object_link'><a href="JsonUtil.html#adapt_response_for_json_parsing-class_method" title="ReceptionSdk::JsonUtil.adapt_response_for_json_parsing (method)">adapt_response_for_json_parsing</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='const'><span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span></span><span class='period'>.</span><span class='id identifier rubyid_build_from_open_struct'><span class='object_link'><a href="Order.html#build_from_open_struct-class_method" title="ReceptionSdk::Order.build_from_open_struct (method)">build_from_open_struct</a></span></span><span class='lparen'>(</span><span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_body_json'>body_json</span><span class='comma'>,</span> <span class='label'>object_class:</span> <span class='const'>OpenStruct</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='op'>::</span><span class='id identifier rubyid_build_from_response'><span class='object_link'><a href="ApiException.html#build_from_response-class_method" title="ReceptionSdk::ApiException.build_from_response (method)">build_from_response</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_se'>se</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_se'>se</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_all-instance_method">
+  
+    #<strong>get_all</strong>(state, pagination_options, on_success = nil, on_error = nil)  &#x21d2; <tt>Array&lt;<span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Listen for new orders. This will return new and orders updates</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>state</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the state of the orders</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>pagination_options</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the pagination configuration</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>on_success</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>lambda to be called when a new order is received</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>on_error</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>lambda to be called when an error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a list of orders, might be empty if there are no orders</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if some error has occurred with the params</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 81</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_all'>get_all</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='comma'>,</span> <span class='id identifier rubyid_on_success'>on_success</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id identifier rubyid_on_error'>on_error</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='kw'>unless</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_is_authenticated'>is_authenticated</span>
+    <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_authenticate'>authenticate</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>!=</span> <span class='const'><span class='object_link'><a href="OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_instance_of?'>instance_of?</span> <span class='const'><span class='object_link'><a href="PaginationOptions.html" title="ReceptionSdk::PaginationOptions (class)">PaginationOptions</a></span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'>ArgumentError</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>pagination_options is mandatory for a state different to PENDING</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  <span class='kw'>if</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_push_available'>push_available</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot get PENDING orders from this method using this kind of credentials</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_pushed_orders'>pushed_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_on_success'>on_success</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>else</span>
+    <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_on_success'>on_success</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id identifier rubyid_on_error'>on_error</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='id identifier rubyid_poll_orders'>poll_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_on_success'>on_success</span><span class='comma'>,</span> <span class='id identifier rubyid_on_error'>on_error</span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_load_orders'>load_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_tracking-instance_method">
+  
+    #<strong>get_tracking</strong>(order_id)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieves the OrderTracking given an orderId</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order_id</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order id to be tracked</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>OrderTracking</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 160</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_tracking'>get_tracking</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='const'><span class='object_link'><a href="Ensure.html" title="ReceptionSdk::Ensure (class)">Ensure</a></span></span><span class='period'>.</span><span class='id identifier rubyid_greater_than_zero'><span class='object_link'><a href="Ensure.html#greater_than_zero-class_method" title="ReceptionSdk::Ensure.greater_than_zero (method)">greater_than_zero</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>order_id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Request.html" title="ReceptionSdk::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Request.html#initialize-instance_method" title="ReceptionSdk::Request#initialize (method)">new</a></span></span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>orders/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_order_id'>order_id</span><span class='embexpr_end'>}</span><span class='tstring_content'>/tracking</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="HttpStatus.html" title="ReceptionSdk::HttpStatus (class)">HttpStatus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="HttpStatus.html#OK-constant" title="ReceptionSdk::HttpStatus::OK (constant)">OK</a></span></span>
+      <span class='id identifier rubyid_body_json'>body_json</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>object_class:</span> <span class='const'>OpenStruct</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_order_tracking'>order_tracking</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="OrderTracking.html" title="ReceptionSdk::OrderTracking (class)">OrderTracking</a></span></span><span class='period'>.</span><span class='id identifier rubyid_from_open_struct'><span class='object_link'><a href="OrderTracking.html#from_open_struct-class_method" title="ReceptionSdk::OrderTracking.from_open_struct (method)">from_open_struct</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_body_json'>body_json</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_order_tracking'>order_tracking</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='op'>::</span><span class='id identifier rubyid_build_from_response'><span class='object_link'><a href="ApiException.html#build_from_response-class_method" title="ReceptionSdk::ApiException.build_from_response (method)">build_from_response</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_se'>se</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_se'>se</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="load_orders-instance_method">
+  
+    #<strong>load_orders</strong>(state, pagination_options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 263</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_load_orders'>load_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Request.html" title="ReceptionSdk::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Request.html#initialize-instance_method" title="ReceptionSdk::Request#initialize (method)">new</a></span></span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>orders</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>unless</span> <span class='id identifier rubyid_state'>state</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span>
+        <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>params</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>timestamp</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='ivar'>@timestamp</span>
+      <span class='kw'>else</span>
+        <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>params</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>state</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_state'>state</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='kw'>unless</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>params</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>limit</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_limit'>limit</span>
+      <span class='kw'>end</span>
+      <span class='kw'>unless</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+        <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>params</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>offset</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_request'>request</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="HttpStatus.html" title="ReceptionSdk::HttpStatus (class)">HttpStatus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="HttpStatus.html#OK-constant" title="ReceptionSdk::HttpStatus::OK (constant)">OK</a></span></span>
+      <span class='id identifier rubyid_orders'>orders</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+      <span class='id identifier rubyid_body_json'>body_json</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>object_class:</span> <span class='const'>OpenStruct</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_orders_json'>orders_json</span> <span class='op'>=</span> <span class='id identifier rubyid_body_json'>body_json</span><span class='period'>.</span><span class='id identifier rubyid_data'>data</span>
+      <span class='id identifier rubyid_orders_json'>orders_json</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_order_json'>order_json</span><span class='op'>|</span>
+        <span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Order.html" title="ReceptionSdk::Order (class)">Order</a></span></span><span class='op'>::</span><span class='id identifier rubyid_build_from_open_struct'><span class='object_link'><a href="Order.html#build_from_open_struct-class_method" title="ReceptionSdk::Order.build_from_open_struct (method)">build_from_open_struct</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_order_json'>order_json</span><span class='rparen'>)</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>!=</span> <span class='int'>0</span>
+        <span class='ivar'>@timestamp</span> <span class='op'>=</span> <span class='id identifier rubyid_max_timestamp'>max_timestamp</span><span class='lparen'>(</span><span class='id identifier rubyid_orders'>orders</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+      <span class='kw'>return</span> <span class='id identifier rubyid_orders'>orders</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='op'>::</span><span class='id identifier rubyid_build_from_response'><span class='object_link'><a href="ApiException.html#build_from_response-class_method" title="ReceptionSdk::ApiException.build_from_response (method)">build_from_response</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_se'>se</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_se'>se</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="max_timestamp-instance_method">
+  
+    #<strong>max_timestamp</strong>(orders)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+307
+308
+309
+310
+311
+312
+313</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 307</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_max_timestamp'>max_timestamp</span><span class='lparen'>(</span><span class='id identifier rubyid_orders'>orders</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_timestamps'>timestamps</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_order'>order</span><span class='op'>|</span>
+    <span class='id identifier rubyid_timestamps'>timestamps</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_timestamp'>timestamp</span><span class='rparen'>)</span>
+  <span class='rbrace'>}</span>
+  <span class='kw'>return</span> <span class='id identifier rubyid_timestamps'>timestamps</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="poll_orders-instance_method">
+  
+    #<strong>poll_orders</strong>(on_success, on_error, pagination_options)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 247</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_poll_orders'>poll_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_on_success'>on_success</span><span class='comma'>,</span> <span class='id identifier rubyid_on_error'>on_error</span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_scheduler'>scheduler</span> <span class='op'>=</span> <span class='const'>Rufus</span><span class='op'>::</span><span class='const'>Scheduler</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='id identifier rubyid_scheduler'>scheduler</span><span class='period'>.</span><span class='id identifier rubyid_in'>in</span> <span class='const'><span class='object_link'><a href="#POLL_TIME_SECONDS-constant" title="ReceptionSdk::OrdersClient::POLL_TIME_SECONDS (constant)">POLL_TIME_SECONDS</a></span></span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_orders'>orders</span> <span class='op'>=</span> <span class='id identifier rubyid_load_orders'>load_orders</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span><span class='comma'>,</span> <span class='id identifier rubyid_pagination_options'>pagination_options</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_order'>order</span><span class='op'>|</span>
+        <span class='id identifier rubyid_on_success'>on_success</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+      <span class='rbrace'>}</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_on_error'>on_error</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_e'>e</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_se'>se</span>
+    <span class='id identifier rubyid_on_error'>on_error</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_se'>se</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="pushed_orders-instance_method">
+  
+    #<strong>pushed_orders</strong>(on_success)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 218</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_pushed_orders'>pushed_orders</span><span class='lparen'>(</span><span class='id identifier rubyid_on_success'>on_success</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='op'>!</span><span class='lparen'>(</span><span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_is_authenticated'>is_authenticated</span><span class='rparen'>)</span>
+    <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_authenticate'>authenticate</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_credentials'>credentials</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_order_access_key'>order_access_key</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_order_secret_key'>order_secret_key</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_region_endpoint'>region_endpoint</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>||</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_queue_name'>queue_name</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='id identifier rubyid_raise'>raise</span><span class='lparen'>(</span><span class='const'>ArgumentError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>This credential is not allowed to listen for new orders. Contact PedidosYa for further information</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_sqs'>sqs</span> <span class='op'>=</span> <span class='const'>Aws</span><span class='op'>::</span><span class='const'>SQS</span><span class='op'>::</span><span class='const'>Client</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='label'>access_key_id:</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_order_access_key'>order_access_key</span><span class='comma'>,</span>
+                             <span class='label'>secret_access_key:</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_order_secret_key'>order_secret_key</span><span class='comma'>,</span> <span class='label'>region:</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_region_endpoint'>region_endpoint</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_queue_url'>queue_url</span> <span class='op'>=</span> <span class='id identifier rubyid_sqs'>sqs</span><span class='period'>.</span><span class='id identifier rubyid_get_queue_url'>get_queue_url</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>queue_name:</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_queue_name'>queue_name</span> <span class='rbrace'>}</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_queue_url'>queue_url</span>
+  <span class='id identifier rubyid_poller_config'>poller_config</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>wait_time_seconds:</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_queue_wait_time_seconds'>queue_wait_time_seconds</span><span class='comma'>,</span> <span class='label'>max_number_of_messages:</span> <span class='const'><span class='object_link'><a href="#MAX_NUMBER_OF_MESSAGES-constant" title="ReceptionSdk::OrdersClient::MAX_NUMBER_OF_MESSAGES (constant)">MAX_NUMBER_OF_MESSAGES</a></span></span><span class='comma'>,</span> <span class='label'>skip_delete:</span> <span class='kw'>true</span><span class='comma'>,</span>
+                    <span class='label'>message_attribute_names:</span> <span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ApproximateReceiveCount</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_poller'>poller</span> <span class='op'>=</span> <span class='const'>Aws</span><span class='op'>::</span><span class='const'>SQS</span><span class='op'>::</span><span class='const'>QueuePoller</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_queue_url'>queue_url</span><span class='comma'>,</span> <span class='label'>client:</span> <span class='id identifier rubyid_sqs'>sqs</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_thread'>thread</span> <span class='op'>=</span> <span class='const'>Thread</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_poller'>poller</span><span class='period'>.</span><span class='id identifier rubyid_poll'>poll</span><span class='lparen'>(</span><span class='id identifier rubyid_poller_config'>poller_config</span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_messages'>messages</span><span class='op'>|</span>
+      <span class='id identifier rubyid_messages'>messages</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_message'>message</span><span class='op'>|</span>
+        <span class='id identifier rubyid_receive_count'>receive_count</span> <span class='op'>=</span> <span class='id identifier rubyid_message'>message</span><span class='period'>.</span><span class='id identifier rubyid_attributes'>attributes</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>ApproximateReceiveCount</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+        <span class='id identifier rubyid_poller'>poller</span><span class='period'>.</span><span class='id identifier rubyid_delete_message'>delete_message</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_receive_count'>receive_count</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_queue_max_retries'>queue_max_retries</span>
+        <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='const'>JSON</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span><span class='comma'>,</span> <span class='label'>object_class:</span> <span class='const'>OpenStruct</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_processed'>processed</span> <span class='op'>=</span> <span class='id identifier rubyid_on_success'>on_success</span><span class='period'>.</span><span class='id identifier rubyid_call'>call</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_poller'>poller</span><span class='period'>.</span><span class='id identifier rubyid_delete_message'>delete_message</span><span class='lparen'>(</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_processed'>processed</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_thread'>thread</span><span class='period'>.</span><span class='id identifier rubyid_abort_on_exception'>abort_on_exception</span> <span class='op'>=</span> <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="reject-instance_method">
+  
+    #<strong>reject</strong>(order, reject_message, rejection_note = nil)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Reject rejecting order</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>order</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the order to be rejected</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>reject_message</span>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the reject message selected</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>rejection_note</span>
+      
+      
+        <span class='type'></span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the rejection note</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>true if the order was rejected</p>
+</div>
+      
+    </li>
+  
+</ul>
+<p class="tag_title">Raises:</p>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ArgumentError if some error has occurred with params</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>ApiException if some error has occurred</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 131</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_reject'>reject</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_message'>reject_message</span><span class='comma'>,</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_order'>order</span><span class='op'>:</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+  <span class='id identifier rubyid_reject_message_id'>reject_message_id</span> <span class='op'>=</span> <span class='id identifier rubyid_reject_message'>reject_message</span><span class='period'>.</span><span class='id identifier rubyid_is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Numeric</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id identifier rubyid_reject_message'>reject_message</span> <span class='op'>:</span> <span class='id identifier rubyid_reject_message'>reject_message</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+
+  <span class='kw'>unless</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+    <span class='const'><span class='object_link'><a href="Ensure.html" title="ReceptionSdk::Ensure (class)">Ensure</a></span></span><span class='period'>.</span><span class='id identifier rubyid_argument_not_null_or_empty_string'><span class='object_link'><a href="Ensure.html#argument_not_null_or_empty_string-class_method" title="ReceptionSdk::Ensure.argument_not_null_or_empty_string (method)">argument_not_null_or_empty_string</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_rejection_note'>rejection_note</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rejection_note</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>return</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="#REJECT-constant" title="ReceptionSdk::OrdersClient::REJECT (constant)">REJECT</a></span></span><span class='comma'>,</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_message_id'>reject_message_id</span><span class='comma'>,</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="update-instance_method">
+  
+    #<strong>update</strong>(order_id, state, delivery_time_id, reject_message_id, dispatched, rejection_note)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/reception_sdk/clients/orders_client.rb', line 182</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_update'>update</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='id identifier rubyid_state'>state</span><span class='comma'>,</span> <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_message_id'>reject_message_id</span><span class='comma'>,</span> <span class='id identifier rubyid_dispatched'>dispatched</span><span class='comma'>,</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span><span class='rparen'>)</span>
+  <span class='kw'>begin</span>
+    <span class='id identifier rubyid_request'>request</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Request.html" title="ReceptionSdk::Request (class)">Request</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Request.html#initialize-instance_method" title="ReceptionSdk::Request#initialize (method)">new</a></span></span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_endpoint'>endpoint</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>orders/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_order_id'>order_id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+
+    <span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_dispatched'>dispatched</span>
+      <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>dispatched</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_dispatched'>dispatched</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>state</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_state'>state</span>
+      <span class='kw'>if</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#CONFIRM-constant" title="ReceptionSdk::OrdersClient::CONFIRM (constant)">CONFIRM</a></span></span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span> <span class='op'>==</span> <span class='int'>0</span>
+          <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>deliveryTimeId</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span>
+        <span class='kw'>end</span>
+      <span class='kw'>elsif</span> <span class='id identifier rubyid_state'>state</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="#REJECT-constant" title="ReceptionSdk::OrdersClient::REJECT (constant)">REJECT</a></span></span>
+        <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>rejectMessageId</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_reject_message_id'>reject_message_id</span>
+        <span class='kw'>unless</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+          <span class='id identifier rubyid_body'>body</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>notes</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_rejection_note'>rejection_note</span>
+        <span class='kw'>end</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_request'>request</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span> <span class='op'>=</span> <span class='id identifier rubyid_body'>body</span>
+
+    <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@connection</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span> <span class='id identifier rubyid_request'>request</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_status_code'>status_code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="HttpStatus.html" title="ReceptionSdk::HttpStatus (class)">HttpStatus</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="HttpStatus.html#OK-constant" title="ReceptionSdk::HttpStatus::OK (constant)">OK</a></span></span>
+      <span class='kw'>return</span> <span class='kw'>true</span>
+    <span class='kw'>else</span>
+      <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='op'>::</span><span class='id identifier rubyid_build_from_response'><span class='object_link'><a href="ApiException.html#build_from_response-class_method" title="ReceptionSdk::ApiException.build_from_response (method)">build_from_response</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_e'>e</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_e'>e</span>
+  <span class='kw'>rescue</span> <span class='const'>StandardError</span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_se'>se</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ApiException.html#initialize-instance_method" title="ReceptionSdk::ApiException#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_se'>se</span><span class='period'>.</span><span class='id identifier rubyid_message'>message</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Tue Nov 20 10:25:58 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.15 (ruby-2.3.3).
+</div>
+
+    </div>
+  </body>
+</html>

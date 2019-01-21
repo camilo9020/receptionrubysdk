@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.15
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h1 id="label-Getting+started+with+Ruby">Getting started with Ruby</h1>
+
+<p>First of all you should decide which kind of integration to use. You have
+two types of possible integrations:</p>
+<ul><li>
+<p><strong>Centralized server:</strong> The restaurants interacts with an
+application server</p>
+</li><li>
+<p><strong>Point to point:</strong> The restaurants interacts directly with
+PedidosYa API</p>
+</li></ul>
+
+<p><strong><em>Note:</em></strong> When you are using point to point method
+then you need an extra pair of credentials. This extra pair of credentials
+correspond to the restaurant itself.</p>
+
+<h2 id="label-Authentication">Authentication</h2>
+
+<p>For accessing the API you need to create a <em>Credentials</em> object.</p>
+
+<h5 id="label-Centralized+credentials+example">Centralized credentials example</h5>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Credentials.html" title="ReceptionSdk::Credentials (class)">Credentials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ReceptionSdk/Credentials.html#initialize-instance_method" title="ReceptionSdk::Credentials#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_id'>client_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_id</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_secret'>client_secret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_secret</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html" title="ReceptionSdk::Environments (class)">Environments</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html#DEVELOPMENT-constant" title="ReceptionSdk::Environments::DEVELOPMENT (constant)">DEVELOPMENT</a></span></span>
+</code></pre>
+
+<p>This kind of credentials will work for all the restaurants handled by the
+third party application.</p>
+
+<h5 id="label-Point+to+point+credentials+example">Point to point credentials example</h5>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Credentials.html" title="ReceptionSdk::Credentials (class)">Credentials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ReceptionSdk/Credentials.html#initialize-instance_method" title="ReceptionSdk::Credentials#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_id'>client_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_id</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_secret'>client_secret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_secret</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>restaurant_username</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>restaurant_secret</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html" title="ReceptionSdk::Environments (class)">Environments</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html#DEVELOPMENT-constant" title="ReceptionSdk::Environments::DEVELOPMENT (constant)">DEVELOPMENT</a></span></span>
+</code></pre>
+
+<p>This credentials will only work for the specified restaurant.</p>
+
+<h2 id="label-Environments">Environments</h2>
+
+<p>This SDK supports multiple environments:</p>
+<ul><li>
+<p><strong>Development:</strong> Default environment, used for development
+only.</p>
+</li><li>
+<p><strong>Staging:</strong> Pre-production environment, used before every
+release for final testings.</p>
+</li><li>
+<p><strong>Production:</strong> Production environment, used for real life.</p>
+</li></ul>
+
+<p><strong><em>Note:</em></strong> Please be sure that you deploy the
+application with the right environment.</p>
+
+<h2 id="label-Basic+usage">Basic usage</h2>
+
+<p>Whenever you want to use the SDK, you must download the reception_sdk gem
+and use the classes that you need.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>reception_sdk</span><span class='tstring_end'>&#39;</span></span>
+
+<span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Credentials.html" title="ReceptionSdk::Credentials (class)">Credentials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ReceptionSdk/Credentials.html#initialize-instance_method" title="ReceptionSdk::Credentials#initialize (method)">new</a></span></span>
+</code></pre>
+
+<p>Once you have the <em>Credentials</em> object created you must create an
+<em>ApiClient</em> object using the previous credential object.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_credentials'>credentials</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Credentials.html" title="ReceptionSdk::Credentials (class)">Credentials</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ReceptionSdk/Credentials.html#initialize-instance_method" title="ReceptionSdk::Credentials#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_id'>client_id</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_id</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_client_secret'>client_secret</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>your_client_secret</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_credentials'>credentials</span><span class='period'>.</span><span class='id identifier rubyid_environment'>environment</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html" title="ReceptionSdk::Environments (class)">Environments</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/Environments.html#DEVELOPMENT-constant" title="ReceptionSdk::Environments::DEVELOPMENT (constant)">DEVELOPMENT</a></span></span>
+
+<span class='kw'>begin</span>
+  <span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiClient.html" title="ReceptionSdk::ApiClient (class)">ApiClient</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="ReceptionSdk/ApiClient.html#initialize-instance_method" title="ReceptionSdk::ApiClient#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_credentials'>credentials</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_delivery_times'>delivery_times</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_delivery_time'>delivery_time</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Uups an error has ocurred!</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p><strong>Important:</strong> You must instantiate the <em>ApiClient</em> at
+the very beginning of your application and save that instance of
+<em>ApiClient</em> (for ex: in an static variable) and use that instance in
+the whole life cycle of your application. Please do not instantiate the
+<em>ApiClient</em> inside a for loop for example.</p>
+
+<h2 id="label-Orders+operations">Orders operations</h2>
+
+<p>First of all, you must import our delivery times and rejection messages,
+what is a delivery time? and a rejection message?.</p>
+<ul><li>
+<p><strong>Delivery time:</strong> Promised interval that order should be
+delivered.</p>
+</li><li>
+<p><strong>Reject message:</strong> If the restaurant can&#39;t accept the
+order then it must be rejected with one of the predefined reasons.</p>
+</li></ul>
+
+<p><strong><em>Important:</em></strong> <em>DeliveryTimes</em> and
+<em>RejectMessages</em> are dynamic, as well as their attributes, so do not
+hardcode them.<br> A good practice is to import them every day or on
+application start up, and save them somewhere in your application.</p>
+
+<p>You can get all the delivery times using this operation</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_delivery_times'>delivery_times</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_deliver_time'>deliver_time</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span>
+</code></pre>
+
+<h5 id="label-List+of+delivery+times">List of delivery times</h5>
+
+<p>| Code | Description ES | Description PT | |:————- |:——————|:——————| | 1 |
+Entre 15&#39; y 30&#39; | Entre 15&#39; e 30&#39; | | 2 | Entre 30&#39; y
+45&#39; | Entre 30&#39; e 45&#39; | | 3 | Entre 45&#39; y 60&#39; | Entre
+45&#39; e 60&#39; | | 4 | Entre 60&#39; y 90&#39; | Entre 60&#39; e 90&#39;
+| | 5 | Entre 90&#39; y 120&#39; | Entre 90&#39; e 120&#39; | | 6 | 24
+horas | 24 horas | | 7 | 48 horas | 48 horas | | 8 | 72 horas | 72 horas |
+| 9 | Entre 120&#39; y 150&#39; | Entre 120&#39; e 150&#39; | | 10 | 12
+horas | 12 horas | | 11 | Entre 150&#39; y 180&#39; | Entre 150&#39; e
+180&#39; |</p>
+
+<p>Then, you can get all the reject messages</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_reject_messages'>reject_messages</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span>
+</code></pre>
+
+<p>There are two important attributes in <em>RejectMessage</em> that you have
+to consider: forLogistics, forPickup.<br> When rejecting an order that has
+the flag logistics in true, you must not use/show reject messages that have
+forLogistics in false.<br> The same rule applies to orders with the flag
+pickup in true. The field to show in your system is <em>DescriptionES</em>.</p>
+
+<p>Example:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_my_saved_reject_messages'>my_saved_reject_messages</span> <span class='op'>=</span> <span class='id identifier rubyid_saved_reject_messages'>saved_reject_messages</span><span class='lparen'>(</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_reject_messages_for_this_order'>reject_messages_for_this_order</span> <span class='op'>=</span> <span class='id identifier rubyid_my_saved_reject_messages'>my_saved_reject_messages</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+
+<span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_logistics'>logistics</span>
+    <span class='id identifier rubyid_reject_messages_for_this_order'>reject_messages_for_this_order</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='period'>.</span><span class='id identifier rubyid_for_logistics'>for_logistics</span>
+        <span class='id identifier rubyid_reject_messages_for_this_order'>reject_messages_for_this_order</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span>
+
+<span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_pickup'>pickup</span>
+    <span class='id identifier rubyid_reject_messages_for_this_order'>reject_messages_for_this_order</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='op'>|</span>
+      <span class='kw'>if</span> <span class='op'>!</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='period'>.</span><span class='id identifier rubyid_for_pickup'>for_pickup</span>
+        <span class='id identifier rubyid_reject_messages_for_this_order'>reject_messages_for_this_order</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_reject_message'>reject_message</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h5 id="label-List+of+reject+messages">List of reject messages</h5>
+
+<p>| Code | Description ES | Description PT | For Restaurant |
+|:——-|:—————————————–|—————————————-|—————-| | 1 | No llegamos hasta la
+zona indicada | Não entregamos na área indicada | yes | | 2 | No llega al
+monto mínimo | Não alcança o valor mínimo | yes | | 3 | Restaurante cerrado
+| Restaurante fechado | yes | | 4 | Datos del cliente insuficientes | Dados
+do cliente insuficientes | yes | | 5 | Datos del medio de pago incorrectos
+| Dados da forma de pagamento incorretos | yes | | 6 | El cliente lo
+canceló | O cliente cancelou | yes | | 7 | Falta de productos del
+restaurante | Falta de produtos do restaurante | yes | | 8 | Restaurante
+fuera de servicio | Restaurante fora do ar | no | | 12 | La integración no
+pudo recibir el pedido | A integração não pode receber o pedido | no | | 13
+| El restaurante no entregó el pedido | O restaurante não entregou o pedido
+| no | | 14 | El usuario no aceptó el pedido | O usuário não aceitou o
+pedido | yes |</p>
+
+<p><strong><em>Note:</em></strong> You should only show to restaurant
+operators reject messages with “yes” in “For Restaurant”. But if there is a
+problem with an integration code of a product and you don&#39;t know which
+product is in an order, you should reject the order with the reject id 12.</p>
+
+<h5 id="label-Getting+new+orders">Getting new orders</h5>
+
+<p>You should add an entry in your server cron that ask for new orders every
+minute.</p>
+
+<p>Get new orders to iterate over them:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_orders'>orders</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/OrderState.html#PENDING-constant" title="ReceptionSdk::OrderState::PENDING (constant)">PENDING</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/PaginationOptions.html" title="ReceptionSdk::PaginationOptions (class)">PaginationOptions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'><span class='object_link'><a href="ReceptionSdk/PaginationOptions.html#create-class_method" title="ReceptionSdk::PaginationOptions.create (method)">create</a></span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_order'>order</span><span class='op'>|</span>
+  <span class='id identifier rubyid_do_something'>do_something</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+<span class='rbrace'>}</span>
+</code></pre>
+
+<p>When getting pending orders, the second parameter (PaginationOptions) is
+ignored and <strong>all</strong> pending orders are returned. Pagination
+options is considered when requesting confirmed or rejected orders.</p>
+
+<p>Or you can use lambdas to process each order: <code>ruby on_success =
+-&gt;(order, api) {   if everything_ok(order)    
+api.order.confirm(order.id, delivery_time_id)     return true # If the
+order is processed, false otherwise   end } on_error = -&gt;(ex) {   raise
+ex } api.order.get_all(ReceptionSdk::OrderState::PENDING,
+ReceptionSdk::PaginationOptions.create, on_success, on_error) </code></p>
+
+<p><strong><em>Note:</em></strong> Keep in mind that you will receive one
+order per callback so be aware that your import mechanism shouldn&#39;t
+take so long.</p>
+
+<h6 id="label-Regular+orders">Regular orders</h6>
+
+<p>The client order for food when the restaurant is opened. These kind of
+orders are for immediately delivery and they have the properties
+<em>pickup</em>, <em>preOrder</em> and <em>logistics</em> in false. The
+restaurant should delivery the order approximately at the time specified in
+<em>deliveryDate</em></p>
+
+<h6 id="label-Pickup+orders">Pickup orders</h6>
+
+<p>Some orders are not for delivery, instead the client will pick up the order
+in the restaurant. All the pick up orders have the property <em>pickup</em>
+in <em>true</em>, <em>address</em> in <em>null</em> and the estimated
+pickup time in <em>pickupDate</em>.</p>
+
+<h6 id="label-Anticipated+orders">Anticipated orders</h6>
+
+<p>The client can order for food before the restaurant it&#39;s opened, if
+that&#39;s the case then the <em>preOrder</em> property has the value
+<em>true</em>. The restaurant should delivery the order at the time
+specified in <em>deliveryDate</em>.</p>
+
+<h6 id="label-Logistics+orders">Logistics orders</h6>
+
+<p>This only applies if the restaurant delivery it&#39;s handled by
+PedidosYa&#39;s fleet, otherwise you should ignore this. All orders with
+logistics are identified by the property <em>logistics</em> in
+<em>true</em>. In this case you must pay attention to the
+<em>pickupDate</em> property, this field contains the time that one rider
+will pick up the order to be delivered.</p>
+
+<h6 id="label-Orders+with+discounts">Orders with discounts</h6>
+
+<p>We handle two kinds of discounts as specified in the property <em>type</em>
+in the <em><a href="#discount">Discount</a></em> Model:</p>
+<ul><li>
+<p><strong>PERCENTAGE:</strong> Discount specified by a percentage value</p>
+</li><li>
+<p><strong>VALUE:</strong> Discount specified by an amount of money</p>
+</li></ul>
+
+<p>The Order model contains a list of discounts, with the corresponding
+priority of each discount.</p>
+
+<h6 id="label-Online+paid+orders">Online paid orders</h6>
+
+<p>If the order was paid with an online payment method then the property
+<em>online</em> in the <em>payment</em> property of the order is in
+<em>true</em>.</p>
+
+<h5 id="label-Confirm+an+order">Confirm an order</h5>
+
+<p>Once you processed the order and it&#39;s ready to be cooked you must
+confirm it indicating the estimated delivery time.</p>
+
+<p><strong><em>Note:</em></strong> An order must be confirmed before three
+minutes.</p>
+
+<p><strong><em>Note:</em></strong> For <em>Regular orders</em> and <em>Pick up
+orders</em> the method for confirmation it&#39;s the same, it&#39;s
+mandatory to specify the delivery time when the order is going to be
+confirmed, otherwise you must confirm the order without a delivery time, if
+you specify one, you are going to receive an error.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>begin</span>
+  <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span> <span class='op'>=</span> <span class='id identifier rubyid_restaurant_selected_time'>restaurant_selected_time</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='id identifier rubyid_order_to_confirm'>order_to_confirm</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_pre_order'>pre_order</span> <span class='op'>||</span> <span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_logistics'>logistics</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_confirm'>confirm</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_confirm'>confirm</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='comma'>,</span> <span class='id identifier rubyid_delivery_time_id'>delivery_time_id</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span>
+    <span class='id identifier rubyid_confirm_order_locally'>confirm_order_locally</span><span class='lparen'>(</span><span class='rparen'>)</span>  
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ex'>ex</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html" title="ReceptionSdk::ErrorCode (class)">ErrorCode</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html#INTERNAL_SERVER_ERROR-constant" title="ReceptionSdk::ErrorCode::INTERNAL_SERVER_ERROR (constant)">INTERNAL_SERVER_ERROR</a></span></span>
+    <span class='comment'># Wait 5 seconds and retry again
+</span>    <span class='comment'># Don&#39;t retry more than three times
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span> 
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>You can use order and delivery time ids directly, or an object with an id
+property.</p>
+
+<h5 id="label-Reject+an+order">Reject an order</h5>
+
+<p>If you can&#39;t process the order or the order cannot be delivered for
+some reason you should reject it.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>begin</span>
+  <span class='id identifier rubyid_reject_message_id'>reject_message_id</span> <span class='op'>=</span> <span class='id identifier rubyid_restaurant_reject_reason'>restaurant_reject_reason</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order_to_reject'>order_to_reject</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_message_id'>reject_message_id</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span>
+    <span class='id identifier rubyid_reject_order_locally'>reject_order_locally</span><span class='lparen'>(</span><span class='rparen'>)</span>  
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ex'>ex</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html" title="ReceptionSdk::ErrorCode (class)">ErrorCode</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html#INTERNAL_SERVER_ERROR-constant" title="ReceptionSdk::ErrorCode::INTERNAL_SERVER_ERROR (constant)">INTERNAL_SERVER_ERROR</a></span></span>
+    <span class='comment'># Wait 5 seconds and retry again
+</span>    <span class='comment'># Don&#39;t retry more than three times
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span> 
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>You can use order and reject message ids directly, or an object with an id
+property.</p>
+
+<p>You can also reject an order with a text note.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>begin</span>
+  <span class='id identifier rubyid_reject_message_id'>reject_message_id</span> <span class='op'>=</span> <span class='id identifier rubyid_restaurant_reject_reason'>restaurant_reject_reason</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order_to_reject'>order_to_reject</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_reject_note'>reject_note</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Rejection note</span><span class='tstring_end'>&#39;</span></span>
+  
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_reject'>reject</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_message_id'>reject_message_id</span><span class='comma'>,</span> <span class='id identifier rubyid_reject_note'>reject_note</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span>
+    <span class='id identifier rubyid_reject_order_locally'>reject_order_locally</span><span class='lparen'>(</span><span class='rparen'>)</span>  
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ex'>ex</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html" title="ReceptionSdk::ErrorCode (class)">ErrorCode</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html#INTERNAL_SERVER_ERROR-constant" title="ReceptionSdk::ErrorCode::INTERNAL_SERVER_ERROR (constant)">INTERNAL_SERVER_ERROR</a></span></span>
+    <span class='comment'># Wait 5 seconds and retry again
+</span>    <span class='comment'># Don&#39;t retry more than three times
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span> 
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p><strong><em>Note:</em></strong> An order must be rejected before three
+minutes</p>
+
+<h5 id="label-Dispatch+an+order">Dispatch an order</h5>
+
+<p>Once the order is cooked and it is ready to deliver, you must call this
+method to indicate the order is on the way to the client address.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='kw'>begin</span>
+  <span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order_to_dispatch'>order_to_dispatch</span><span class='lparen'>(</span><span class='rparen'>)</span>
+  
+  <span class='id identifier rubyid_result'>result</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_dispatch'>dispatch</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='rparen'>)</span>
+  
+  <span class='kw'>if</span> <span class='id identifier rubyid_result'>result</span>
+    <span class='id identifier rubyid_dispatch_order_locally'>dispatch_order_locally</span><span class='lparen'>(</span><span class='rparen'>)</span>  
+  <span class='kw'>end</span>
+<span class='kw'>rescue</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ApiException.html" title="ReceptionSdk::ApiException (class)">ApiException</a></span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_ex'>ex</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_ex'>ex</span><span class='period'>.</span><span class='id identifier rubyid_code'>code</span> <span class='op'>==</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html" title="ReceptionSdk::ErrorCode (class)">ErrorCode</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/ErrorCode.html#INTERNAL_SERVER_ERROR-constant" title="ReceptionSdk::ErrorCode::INTERNAL_SERVER_ERROR (constant)">INTERNAL_SERVER_ERROR</a></span></span>
+    <span class='comment'># Wait 5 seconds and retry again
+</span>    <span class='comment'># Don&#39;t retry more than three times
+</span>  <span class='kw'>else</span>
+    <span class='id identifier rubyid_raise'>raise</span> <span class='id identifier rubyid_ex'>ex</span> 
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h5 id="label-Retrieve+orders+of+the+day">Retrieve orders of the day</h5>
+
+<p>It&#39;s possible to retrieve the last confirmed or rejected orders of the
+day. For example, to retrieve the last confirmed orders you should do it
+this way:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_orders'>orders</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_get_all'>get_all</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/OrderState.html" title="ReceptionSdk::OrderState (class)">OrderState</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/OrderState.html#CONFIRMED-constant" title="ReceptionSdk::OrderState::CONFIRMED (constant)">CONFIRMED</a></span></span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="ReceptionSdk.html" title="ReceptionSdk (module)">ReceptionSdk</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ReceptionSdk/PaginationOptions.html" title="ReceptionSdk::PaginationOptions (class)">PaginationOptions</a></span></span><span class='period'>.</span><span class='id identifier rubyid_create'><span class='object_link'><a href="ReceptionSdk/PaginationOptions.html#create-class_method" title="ReceptionSdk::PaginationOptions.create (method)">create</a></span></span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_orders'>orders</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_do_something'>do_something</span><span class='lparen'>(</span><span class='id identifier rubyid_orders'>orders</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>In case you want the rejected ones just change
+<em>OrderState::$CONFIRMED</em> with <em>OrderState::$REJECTED</em></p>
+
+<p><strong><em>Note:</em></strong> This will not return <strong>all</strong>
+the orders, the response is limited to the last 15 orders as explained in
+the pagination section. A good practice it&#39;s to save the order id in
+your system.</p>
+
+<p>If you have the order id then you can ask for a particular order.</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order_id'>order_id</span><span class='lparen'>(</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_order'>order</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='rparen'>)</span>
+<span class='kw'>if</span> <span class='id identifier rubyid_order'>order</span>
+  <span class='id identifier rubyid_do_something'>do_something</span><span class='lparen'>(</span><span class='id identifier rubyid_order'>order</span><span class='rparen'>)</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<h5 id="label-Retrieve+order+tracking+info+for+Logistics+orders">Retrieve order tracking info for Logistics orders</h5>
+
+<p>It&#39;s possible to retrieve the order tracking info for Logistics orders.
+This could be used to have a more accurate date for which the driver
+retrieves the order from the store. This is useful for updating the
+order&#39;s pickupDate and deliveryDate fields. The available information
+is :</p>
+<ul><li>
+<p>The driver&#39;s coordinates and the driver&#39;s name.</p>
+</li><li>
+<p>The pickup date: Date for when the driver picks up the order at the store.
+Updated until the state is PREPARING (included). With this data it&#39;s
+possible to update the order&#39;s pickupDate.</p>
+</li><li>
+<p>The estimated delivery date: Estimated date for when the driver arrives at
+the user&#39;s destination and delivers the order. Updated until DELIVERED
+state. This field corresponds with the order&#39;s deliveryDate field and
+that&#39;s the one that should be updated. The first time the tracking info
+is retrieved, it&#39;s probable that the order&#39;s deliveryDate coincides
+with this field. With this data it&#39;s possible to update the order&#39;s
+deliveryDate.</p>
+</li><li>
+<p>The state of the tracking: These are the possible states for the order
+tracking:</p>
+<ul><li>
+<p>FAILURE: State of the tracking when it failed. The rest of the fields will
+be null.</p>
+</li><li>
+<p>REQUESTING_DRIVER: A driver is being requested to pickup and deliver the
+order. The pickupDate and the estimatedDeliveryDate will be equal to the
+order&#39;s pickupDate and deliveryDate fields respectively.</p>
+</li><li>
+<p>TRANSMITTING: The order is being sent to your system. All the information
+is available.</p>
+</li><li>
+<p>TRANSMITTED: The order was finally sent to your system. All the information
+is available.</p>
+</li><li>
+<p>PREPARING: The order is being prepared. All the information is available.</p>
+</li><li>
+<p>DELIVERING: The order is being delivered by a driver. Pickup date is null.</p>
+</li><li>
+<p>DELIVERED: The order was finally delivered. All data is null.</p>
+</li><li>
+<p>CLOSED: The order is closed and no live tracking happens. All data is null.</p>
+</li></ul>
+</li></ul>
+
+<p>The pickup date and the estimated delivery date are the necessary values to
+update in the order. The driver&#39;s name and coordinates are part of the
+aditional information attached to the order tracking info.</p>
+
+<p>To do that, you should do it in this way:</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_order_id'>order_id</span> <span class='op'>=</span> <span class='id identifier rubyid_order_id'>order_id</span><span class='lparen'>(</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_order_tracking'>order_tracking</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_order'>order</span><span class='period'>.</span><span class='id identifier rubyid_get_tracking'>get_tracking</span><span class='lparen'>(</span><span class='id identifier rubyid_order_id'>order_id</span><span class='rparen'>)</span>
+<span class='kw'>unless</span> <span class='id identifier rubyid_order_tracking'>order_tracking</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span>
+  <span class='id identifier rubyid_tracking_state'>tracking_state</span> <span class='op'>=</span> <span class='id identifier rubyid_order_tracking'>order_tracking</span><span class='period'>.</span><span class='id identifier rubyid_state'>state</span>
+  <span class='comment'># driver class
+</span>  <span class='id identifier rubyid_driver'>driver</span> <span class='op'>=</span> <span class='id identifier rubyid_order_tracking'>order_tracking</span><span class='period'>.</span><span class='id identifier rubyid_driver'>driver</span>
+  <span class='comment'># location class, lat &amp; lng attributes for the driver&#39;s coordinates
+</span>  <span class='id identifier rubyid_location'>location</span> <span class='op'>=</span> <span class='id identifier rubyid_driver'>driver</span><span class='period'>.</span><span class='id identifier rubyid_location'>location</span>
+  <span class='kw'>if</span> <span class='id identifier rubyid_tracking_state'>tracking_state</span> <span class='op'>==</span> <span class='const'>TrackingState</span><span class='op'>::</span><span class='const'>PREPARING</span>
+    <span class='id identifier rubyid_update_pickup_date'>update_pickup_date</span><span class='lparen'>(</span><span class='id identifier rubyid_order_tracking'>order_tracking</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+</code></pre>
+</div></div>
+
+      <div id="footer">
+  Generated on Tue Nov 20 10:25:55 2018 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.15 (ruby-2.3.3).
+</div>
+
+    </div>
+  </body>
+</html>
